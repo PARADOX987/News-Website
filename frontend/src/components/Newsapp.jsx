@@ -4,7 +4,7 @@ import Card from './Card';
 const Newsapp = () => {
   const [search, setSearch] = useState('india'); 
   const [newsData, setNewsData] = useState(null);
-  const API_KEY = 'a474a34e4c874f49932b14bfe7c27389';
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const getData = async () => {
     const response = await fetch(
@@ -31,7 +31,7 @@ const Newsapp = () => {
     <div className="bg-gray-100 min-h-screen flex flex-col">
       <nav className="bg-green-500 text-white py-4">
         <div className="container mx-auto flex justify-between items-center px-4">
-          <h1 className="text-3xl font-bold">Trendy News</h1>
+          <h1 className="text-3xl font-bold">News</h1>
           <div className="searchbar flex space-x-2">
             <input
               type="text"
@@ -49,7 +49,7 @@ const Newsapp = () => {
           </div>
         </div>
       </nav>
-      <p className="font-bold text-2xl">Stay Updated With Trendy</p>
+      <p className="font-bold text-2xl">Stay Updated Here!</p>
       <div className="categoryBtn py-4 flex justify-center space-x-6 bg-white shadow-md">
         <button
           onClick={() => handleCategoryClick('Sports')}
